@@ -1,0 +1,50 @@
+
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: #fff;
+    transition: width 0.3s;
+    max-height: 100vh;             /* Altura máxima igual al viewport */
+    overflow-y: auto;              /* Habilita scroll vertical */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #34495e #1a252f;
+    
+  }
+  
+  /* Para navegadores WebKit */
+  .sidebar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .sidebar::-webkit-scrollbar-track {
+    background: #202020;
+    border-radius: 4px;
+  }
+  
+  .sidebar::-webkit-scrollbar-thumb {
+    background-color: #34495e;
+    border-radius: 4px;
+  }
+  
+  .sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: #4a6073;
+  }
+  
+  /* Sidebar colapsado */
+  .sidebar {
+    width: 250px;
+    /* Otros estilos... */
+    transition: width 0.3s;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .sidebar.collapsed {
+    width: 60px;
+  }
+  
+  .sidebar.collapsed .sidebar-header h2 {
+    display: none;
+  }
+  

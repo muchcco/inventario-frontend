@@ -1,0 +1,11 @@
+<header class="header">
+  <div class="header-left">
+      <button (click)="toggleSidebar()">☰</button>
+      <h3>{{ title }}</h3>
+  </div>
+  <div class="header-right">
+      <fa-icon [icon]="faUser"></fa-icon>
+      <span>Bienvenido, Admin</span>
+      <button (click)="logout()">Logout</button>
+  </div>
+</header>

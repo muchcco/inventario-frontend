@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <app-sidebar [class.collapsed]="sidebarCollapsed"></app-sidebar>
+  <main class="main-content">
+    <!-- Aquí pasamos el título dinámico al header -->
+    <app-header [title]="headerTitle" (toggleSidebarEvent)="handleToggleSidebar()"></app-header>
+    <div class="content">
+      <!-- El evento (activate) se dispara cuando cambia la vista -->
+      <router-outlet (activate)="onActivate($event)"></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </main>
+</div>

@@ -1,0 +1,14 @@
+<aside class="sidebar" [ngClass]="{'collapsed': isCollapsed}">
+  <div class="sidebar-header">
+      <h2>Panel</h2>
+  </div>
+  <ul class="sidebar-menu">
+      <li class="sidevar-active">        
+        <a routerLink="/dashboard"><fa-icon [icon]="faHouse" class="icon-sede"></fa-icon> Dashboard</a>
+      </li>
+      <li><a routerLink="/users">Usuarios</a></li>
+      <li><a routerLink="/products">Productos</a></li>
+      <li><a routerLink="/settings">Configuración</a></li>
+      <li><a routerLink="/reports">Reportes</a></li>
+  </ul>
+</aside>  

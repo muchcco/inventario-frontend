@@ -1,0 +1,27 @@
+.wrapper {
+    display: flex;
+    min-height: 100vh;    
+}
+
+.main-content {    
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px; /* Margen igual al ancho del sidebar */
+    transition: margin-left 0.3s; /* Transición suave al colapsar */
+    height: 100vh; /* Altura completa de la ventana */
+    overflow-y: auto; /* Scroll interno para el contenido */
+}
+
+.main-content.collapsed {
+    margin-left: 60px; /* Margen igual al ancho del sidebar colapsado */
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
