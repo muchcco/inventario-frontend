@@ -3,12 +3,11 @@
       <h2>Panel</h2>
   </div>
   <ul class="sidebar-menu">
-      <li class="sidevar-active">        
+      <li routerLinkActive="sidevar-active">        
         <a routerLink="/dashboard"><fa-icon [icon]="faHouse" class="icon-sede"></fa-icon> Dashboard</a>
       </li>
-      <li><a routerLink="/users">Usuarios</a></li>
-      <li><a routerLink="/products">Productos</a></li>
-      <li><a routerLink="/settings">Configuración</a></li>
-      <li><a routerLink="/reports">Reportes</a></li>
+      <li routerLinkActive="sidevar-active">
+        <a routerLink="/almacen/producto">Porductos</a>
+      </li>
   </ul>
-</aside>  
+</aside>

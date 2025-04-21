@@ -49,11 +49,12 @@ body {
 }
 
 .sidebar-menu li {
-    padding: 15px 15px ;
+    padding: 0;
     border-bottom: 1px solid #34495e;
 }
 
 .sidebar-menu li a {
+    padding: 15px 15px ;
     color: #fff;
     text-decoration: none;
     display: block;

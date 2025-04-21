@@ -30,4 +30,9 @@ export class AuthService {
   login(credentials: { email: string; password: string }): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${this.baseUrl }/login`, credentials);
   }
+
+  logout(): Observable<any> {
+    return this.http.post(`${this.baseUrl}/logout`, {});
+  }
 }
+

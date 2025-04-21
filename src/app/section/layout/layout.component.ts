@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, AfterViewInit, Component } from '@angular/core';
 
 @Component({
   selector: 'app-layout',
@@ -9,6 +9,12 @@ export class LayoutComponent {
   isCollapsed: boolean = false;
   headerTitle: string = 'Dashboard';
   sidebarCollapsed = false;
+
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  ngAfterViewInit() {
+    this.cdr.detectChanges(); // Fuerza la detección de cambios
+  }
 
   toggleSidebar() {
     this.isCollapsed = !this.isCollapsed;

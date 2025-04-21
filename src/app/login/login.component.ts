@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import Swal from 'sweetalert2';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -12,16 +13,21 @@ import Swal from 'sweetalert2';
 export class LoginComponent {
   credentials = { email: '', password: '' };
   errorMessage: string = '';
+  isLoading: boolean = false;
+
+  faSpinner = faSpinner;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin(): void {
+    this.isLoading = true;
     this.authService.login(this.credentials).subscribe({
       next: (response) => {
         // Guarda el token (por ejemplo, en localStorage)
         localStorage.setItem('token', response.token);
         // Redirige al dashboard
         this.router.navigate(['/']);
+        this.isLoading = false;
       },
       error: (err) => {
         console.error('Error en el login:', err);
@@ -42,6 +48,7 @@ export class LoginComponent {
           icon: 'error',
           confirmButtonText: 'OK'
         });
+        this.isLoading = false;
       }
     });
   }

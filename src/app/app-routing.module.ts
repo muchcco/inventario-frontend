@@ -5,9 +5,11 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 import { AuthGuard } from './auth/auth.guard'; // Asumiendo que tienes un AuthGuard
 import { LayoutComponent } from './section/layout/layout.component';
+import { LoginRedirectGuard } from './guards/login-redirect.guard';
+import { ProductoComponent } from './pages/almacen/producto/producto.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent , canActivate: [LoginRedirectGuard]},
   { path: 'logout', redirectTo: '/login', pathMatch: 'full' },
   // Rutas protegidas dentro del layout:
   {
@@ -16,7 +18,7 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
-      // Puedes agregar otras rutas hijas aquí
+      { path: 'almacen/producto', component: ProductoComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },
